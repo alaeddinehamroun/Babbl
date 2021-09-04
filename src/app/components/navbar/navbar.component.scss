@@ -1,0 +1,40 @@
+#navbar.active {
+    margin: 0%;
+    transition: all 0.4s;
+}
+#navbar {
+    margin-left: 250px;
+    transition: all 0.4s;
+}
+.navbar-brand{
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar-brand{
+        display: block;
+    }
+    #navbar.active {
+        margin: 0%;
+        transition: all 0.4s;
+    }
+    #navbar {
+        margin: 0%;
+        transition: all 0.4s;
+    }
+    #toggler{
+        margin-left: 30px;
+        transition: all 0.4s;
+    }
+    #toggler.active{
+        margin-left: 0px;
+        transition: all 0.4s;
+    }
+  
+  }
+
+  .navbar-nav .dropdown-menu {
+      position: absolute !important;
+  }
+  .navbar-nav {
+    flex-direction: row ;
+  }

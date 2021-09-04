@@ -1,0 +1,84 @@
+
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar" [class.active]=" toggleService.showSidebar">
+  <div id="sidebar-wrapper">
+    <!-- Brand -->
+    <a class="navbar-brand mt-2" routerLinkActive="active" id="brand">
+      CHAT APP 
+    </a>
+    <!-- Divider -->
+    <hr class="my-3" id="brand">
+    <!--Search-->
+    <div class="form-group">
+      <div class="input-group input-group-alternative mb-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i>
+          </span>
+        </div>
+        <input class="form-control form-control-alternative" placeholder="Search ..." type="text">
+      </div>
+    </div>
+    <div class="scrollit">
+    <!-- Heading -->
+    <h6 class="navbar-heading text-muted ">Friends</h6>
+    <!-- Friendlist -->
+  
+    <ul class="navbar-nav mb-md-3">
+      <li class="nav-item">
+        <a class="nav-link pr-0 pl-1" routerLinkActive="active" (click)="selectUser('someone')">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
+            </span>
+            <div class="media-body ml-2 d-none d-lg-block">
+              <span class="">user?.username</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <!-- Heading -->
+    <h6 class="navbar-heading text-muted">Groups</h6>
+    <!-- Grouplist -->
+    <ul class="navbar-nav mb-md-3">
+      <li class="nav-item">
+        <a class="nav-link pr-0">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
+            </span>
+            <div class="media-body ml-2 d-none d-lg-block">
+              <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link pr-0">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
+            </span>
+            <div class="media-body ml-2 d-none d-lg-block">
+              <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link pr-0">
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
+            </span>
+            <div class="media-body ml-2 d-none d-lg-block">
+              <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
+<!-- End vertical navbar -->

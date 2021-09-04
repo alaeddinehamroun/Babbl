@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-default" id="navbar" [class.active]="isActive()">
+  <div class="container-fluid">
+    <ul class="navbar-nav align-items-center d-block d-flex">
+      <li class="nav-item">
+        <a class="navbar-brand">
+          CHAT APP
+        </a>
+      </li>
+      <li class="nav-item" [class.active]="isActive()" id="toggler">
+        <a class="nav-link" id="sidebarCollapse" (click)="toggleSidebar()">
+          <i [ngClass]="isActive() ? 'ni ni-bold-right' : 'ni ni-bold-left'"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav align-items-center d-block d-flex ml-auto">
+      <!--Notifications-->
+      <li class="nav-item mr-4" ngbDropdown placement="bottom-right">
+        <a class="nav-link" role="button" ngbDropdownToggle>
+          <i class="fa fa-bell" aria-hidden="true">
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-white">
+              4
+            </span>
+          </i>
+        </a>
+        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+          <div class=" dropdown-header noti-title">
+            <h6 class="text-overflow m-0">Notifications!</h6>
+          </div>
+          <a class="dropdown-item">
+            notif
+          </a>
+          <a class="dropdown-item">
+            notif
+          </a>
+          <a class="dropdown-item">
+            notif
+          </a>
+        </div>
+      </li>
+      <!-- User -->
+      <li class="nav-item" ngbDropdown placement="bottom-right">
+        <a class="nav-link pr-0" role="button" ngbDropdownToggle>
+          <div class="media align-items-center">
+            <span class="avatar avatar-sm rounded-circle">
+              <img alt="" src="">
+            </span>
+            <div class="media-body ml-2 d-none d-lg-block">
+              <span class="mb-0 text-sm  font-weight-bold">user?.username</span>
+            </div>
+          </div>
+        </a>
+        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
+          <div class=" dropdown-header noti-title">
+            <h6 class="text-overflow m-0">Welcome!</h6>
+          </div>
+          <a routerLinkActive="active" [routerLink]="['/profile']" class="dropdown-item">
+            <i class="ni ni-single-02"></i>
+            <span>My profile</span>
+          </a>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+            <i class="ni ni-settings-gear-65"></i>
+            <span>Settings</span>
+          </a>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+            <i class="ni ni-calendar-grid-58"></i>
+            <span>Activity</span>
+          </a>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+            <i class="ni ni-support-16"></i>
+            <span>Support</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">
+            <i class="ni ni-user-run"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,98 @@
+<div class="header bg-gradient-danger py-4 py-lg-4">
+  <div class="container">
+    <div class="header-body text-center mb-7">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6">
+          <h1 class="text-white">Welcome!</h1>
+          <p class="text-lead text-light">Login here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="separator separator-bottom separator-skew zindex-100">
+    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container mt--8 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+          <div class="btn-wrapper text-center">
+            <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+              <span class="btn-inner--icon"><img src="../assets/img/icons/common/github.svg"></span>
+              <span class="btn-inner--text">Github</span>
+            </a>
+            <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+              <span class="btn-inner--icon"><img src="../assets/img/icons/common/google.svg"></span>
+              <span class="btn-inner--text">Google</span>
+            </a>
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <small>Or sign in with credentials</small>
+          </div>
+          <form class="register-form" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <label>Email</label>
+            <div class="input-group form-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+
+              <input name="email" type="email" class="form-control" placeholder="Email"
+                     [(ngModel)]="form.email" required #email="ngModel" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+              <div *ngIf="email.errors.required">
+                email is required 
+              </div>
+              <div *ngIf="email.errors.pattern">
+                Email must be a valid email address
+              </div>
+
+            </div>
+            <label>Password</label>
+            <div class="input-group form-group form-group-no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-key-25"></i>
+                </span>
+              </div>
+              <input name="password" type="password" class="form-control" placeholder="Password"
+                [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+                autocomplete="off">
+
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+              <div *ngIf="password.errors.required">Password is required</div>
+              <div *ngIf="password.errors.minlength">
+                Password must be at least 6 characters
+              </div>
+            </div>
+            <div *ngIf="this.invalidCredentials">
+              invalid credentials
+            </div>
+            <div class="form-group">
+              <button class="btn btn-danger btn-block btn-round">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <a href="javascript:void(0)" class="text-light"><small>Forgot password?</small></a>
+        </div>
+        <div class="col-6 text-right">
+          <a href="javascript:void(0)" class="text-light"><small>Create new account</small></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
