@@ -14,8 +14,9 @@ export class SidebarComponent implements OnInit {
 
   @Input() isActive!: boolean;
   @Input() user: IUser;
-  users: any[]
-
+  users: any[];
+  searchResult: any[];
+  search: boolean = false;
   constructor(private router: Router, public toggleService: ToggleService, private chatService:ChatService) {
   }
 
@@ -31,6 +32,15 @@ export class SidebarComponent implements OnInit {
 
   selectUser(selectedUser: any) {
     this.router.navigate(['/chatroom',selectedUser.displayName])
+  }
+  sendData(event: any) {
+    if(event.target.value)
+      this.search = true;
+    else
+      this.search = false;
+    this.chatService.searchUsers(event.target.value).valueChanges().subscribe(users => {
+      this.searchResult = users;
+    })
   }
 
 }

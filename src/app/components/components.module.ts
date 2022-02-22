@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     RouterModule,
     NgbModule
+
   ],
   declarations: [
     FooterComponent,

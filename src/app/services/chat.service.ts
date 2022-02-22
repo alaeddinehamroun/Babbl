@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebaseAuth from 'firebase/auth';
 import { ChatMessage } from '../models/chat-message.model';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { Observable } from 'rxjs';
 import { IUser } from '../models/user.model';
 
 @Injectable({
@@ -21,16 +19,16 @@ export class ChatService {
 
   }
 
+  searchUsers(username: string): AngularFireList<IUser> {
+    const path = '/users';
+    return this.db.list(path, ref => ref.orderByChild('displayName').startAt(username).endAt(username+"\uf8ff"));
+  }
+
   getUser() {
     const currentUserId = this.user.uid;
     const path = `/users/${currentUserId}`;
     return this.db.object(path);
   }
-
-  // getAllUsers() {
-  //   const path = '/users';
-  //   return this.db.list(path);
-  // }
 
   getOnlineUsers(): AngularFireList<IUser> {
     const path = '/users';
