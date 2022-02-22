@@ -1,7 +1,7 @@
 export interface ChatMessage {
     $key?: string;
-    email: string;
-    username: string;
+    email: string | null;
+    fromto: string;
     message: string;
     timeSent: string;
 }

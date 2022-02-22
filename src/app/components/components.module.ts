@@ -5,9 +5,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MessageComponent } from './message/message.component';
-import { FeedComponent } from './feed/feed.component';
-import { ChatFormComponent } from './chat-form/chat-form.component';
 
 @NgModule({
   imports: [

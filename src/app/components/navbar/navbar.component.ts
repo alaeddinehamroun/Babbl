@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/models/user.model';
-import { ChatService } from 'src/app/services/chat.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { ToggleService } from 'src/app/services/toggle.service';
 
 @Component({
@@ -9,30 +9,24 @@ import { ToggleService } from 'src/app/services/toggle.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  user!: IUser;
-  constructor(private toggleService: ToggleService,
-              private chatService: ChatService,
-              private router: Router) {    
-  }
-  
+export class NavbarComponent {
 
-  ngOnInit(): void {
-   
+  @Input() user: IUser;
+
+  constructor(private toggleService: ToggleService,
+    private authService: AuthService) {
   }
 
   toggleSidebar() {
     this.toggleService.showSidebar = !this.toggleService.showSidebar;
-    console.log(this.toggleService.showSidebar)
   }
 
   isActive() {
     return this.toggleService.showSidebar
   }
 
-  logout(){
-
+  logout() {
+    this.authService.logout()
   }
-
 
 }

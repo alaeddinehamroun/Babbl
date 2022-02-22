@@ -1,5 +1,18 @@
-<div class="feed">
-    <div *ngFor="let message of feed | async" class="message">
-        <app-message [chatMessage]=message></app-message>
+<div class="msg_history" >
+  <div *ngFor="let message of feed" [ngClass]="{'incoming_msg': message.fromto.split(' > ')[0]===this.selectedUser.username,
+                                        'outgoing_msg': message.fromto.split(' > ')[1]===this.selectedUser.username}">
+                                        <!--
+    <div [ngClass]="{'incoming_msg_img': message.fromto===this._fromto,
+    'outcoming_msg_img float-right': message.fromto===this.fromto}"> <img
+    [src]=user?.photoURL alt="avatar"> </div>
+    -->
+    <div [ngClass]="{'received_msg': message.fromto.split(' > ')[0]===this.selectedUser.username,
+    'sent_msg': message.fromto.split(' > ')[1]===this.selectedUser.username}">
+      <div class="received_withd_msg" [ngClass]="{'received_withd_msg': message.fromto.split(' > ')[0]===this.selectedUser.username,
+      '': message.fromto.split(' > ')[1]===this.selectedUser.username}">
+        <p> {{message.message}}</p>
+        <span class="time_date">{{message.timeSent | date:'medium'}}</span>
+      </div>
     </div>
+  </div>
 </div>

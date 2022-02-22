@@ -1,28 +1,24 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChatService } from 'src/app/services/chat.service';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   form: any = {
     email: null,
     password: null
   }
   invalidCredentials: boolean = false;
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    if (true)
-      this.router.navigate(['chatroom'])
-  }
+  constructor(private authService: AuthService) { }
 
   login() {
-    
+    this.authService.login(this.form.email, this.form.password)
+    .catch(error => {
+      console.log(error)
+    });
   }
-
 
 }

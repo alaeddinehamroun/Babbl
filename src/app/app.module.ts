@@ -15,6 +15,7 @@ import { ComponentsModule } from './components/components.module';
 import { WelcomeComponent } from './layouts/welcome/welcome.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   imports: [
@@ -25,8 +26,7 @@ import { environment } from 'src/environments/environment';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
-
+    AngularFireModule.initializeApp(environment.firebase),
 
   ],
   declarations: [
