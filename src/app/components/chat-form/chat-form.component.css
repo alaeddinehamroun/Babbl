@@ -22,6 +22,7 @@
   font-size: 15px;
   min-height: 48px;
   width: 100%;
+  padding-left: 10px;
 }
 
 .type_msg {
@@ -38,7 +39,7 @@
   font-size: 17px;
   height: 33px;
   position: absolute;
-  right: 0;
-  top: 11px;
-  width: 33px;
+  right: 11px;
+  top: 8px;
+  width: 34px;
 }
