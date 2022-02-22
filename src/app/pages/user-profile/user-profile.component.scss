@@ -1,0 +1,16 @@
+#content.active {
+  margin: 0%;
+  margin-left: -250px;
+}
+.page-content {
+  transition: all 0.4s;
+}
+
+@media (max-width: 768px) {
+  #content {
+    margin: 0;
+  }
+  #content.active {
+    margin: 0;
+  }
+}
